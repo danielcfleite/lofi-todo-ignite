@@ -19,8 +19,8 @@
 
 .boxActive {
   cursor: pointer;
-  width: 15vw;
-  height: 20vh;
+  width: 30vw;
+  height: 28vh;
   position: fixed;
   bottom: -1rem;
   left: 1.5rem;
@@ -131,7 +131,8 @@
 }
 
 .headPhones {
-  padding: 1rem;
+  font-size: 1.2rem;
+  padding: 0.8rem;
   border-radius: 50%;
   border: none;
   position: fixed;
@@ -150,9 +151,9 @@
   color: white;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (min-width: 1600px) {
   .boxActive {
-    width: 30vw;
-    height: 30vh;
+    width: 25vw;
+    height: 20vh;
   }
 }

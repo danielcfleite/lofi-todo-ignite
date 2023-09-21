@@ -94,6 +94,11 @@
   padding: 0.1rem;
 }
 
+.iconsWrapper svg {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
 a {
   text-decoration: none;
   color: white;
