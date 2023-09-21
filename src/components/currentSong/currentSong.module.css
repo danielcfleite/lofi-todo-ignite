@@ -22,8 +22,8 @@
   width: 30vw;
   height: 28vh;
   position: fixed;
-  bottom: -1rem;
-  left: 1.5rem;
+  bottom: 1rem;
+  left: -1rem;
   z-index: 3;
   background: linear-gradient(
     135deg,
