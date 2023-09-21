@@ -1,0 +1,158 @@
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes mymove {
+  0% {
+    transform: translateX(220%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.boxActive {
+  cursor: pointer;
+  width: 15vw;
+  height: 20vh;
+  position: fixed;
+  bottom: -1rem;
+  left: 1.5rem;
+  z-index: 3;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 1rem 2rem 0 2rem;
+  transition: 0.5s;
+}
+
+.channelImg {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  right: -5%;
+  top: -10%;
+  z-index: 3;
+}
+
+.songInfo {
+  overflow-x: hidden;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.songInfo > h1 {
+  white-space: nowrap;
+  font-size: 1.3rem;
+  -webkit-animation: mymove 8s linear infinite;
+  animation: mymove 20s linear infinite;
+}
+
+.playing {
+  animation: background-pan 1.5s linear infinite;
+  background: linear-gradient(
+    to right,
+    rgb(213, 34, 165),
+    rgb(220, 60, 212),
+    rgb(224, 91, 167),
+    rgb(220, 62, 172)
+  );
+  background-size: 200%;
+  background-clip: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.boxInnactive {
+  display: flex;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 3;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: 0.5s;
+}
+
+.soundOff {
+  margin-top: 0.4rem;
+}
+
+.boxInnactive h1 {
+  display: none;
+}
+
+.boxInnactive .playing {
+  display: none;
+}
+
+.boxInnactive .ytLogo {
+  display: none;
+}
+
+.ytLogo {
+  transition: 0.3s;
+}
+
+.ytLogo:hover {
+  transform: scale(1.1);
+  color: red;
+}
+
+.headPhones {
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  z-index: 3;
+  bottom: 1rem;
+  left: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: white;
+}
+
+@media screen and (max-width: 1300px) {
+  .boxActive {
+    width: 30vw;
+    height: 30vh;
+  }
+}

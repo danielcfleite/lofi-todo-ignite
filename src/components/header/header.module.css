@@ -1,0 +1,204 @@
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+.header {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12.5rem;
+  position: relative;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 900;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  z-index: 10;
+  transition: 0.5s;
+  cursor: pointer;
+  animation: background-pan 1.5s linear infinite;
+  background: linear-gradient(
+    to right,
+    rgb(213, 34, 165),
+    rgb(220, 60, 212),
+    rgb(224, 91, 167),
+    rgb(220, 62, 172)
+  );
+  background-size: 200%;
+  background-clip: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rocket path {
+  fill: transparent;
+  stroke: 10;
+  stroke: #ffffff;
+}
+
+.dot {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 0.1rem;
+}
+
+@keyframes vhs-overlay {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.iconsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  gap: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 0.1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.btnControls {
+  transition: 0.5s;
+}
+
+.btnControls:hover {
+  cursor: pointer;
+  color: var(--purple);
+  transform: scale(1.1);
+}
+
+.logoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.VhsOverlay {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+  background: linear-gradient(
+    var(--gray-100),
+    var(--gray-300) 10px,
+    transparent 8px,
+    var(--gray-500) 10px,
+    var(--gray-700) 10px
+  );
+  opacity: 0.04;
+  overflow: hidden;
+  background-size: 100% 9px;
+  animation: vhs-overlay 20s infinite linear;
+}
+
+.BG {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  position: absolute;
+}
+
+.taskForm {
+  height: 3.375rem;
+  width: 100%;
+  max-width: 46rem;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  position: absolute;
+  bottom: calc(-3.375rem / 2);
+}
+
+.taskForm input {
+  height: 100%;
+  flex: 1;
+  color: var(--gray-100);
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.taskFrom input::placeholder {
+  color: var(--gray-300);
+}
+
+.taskForm button {
+  height: 100%;
+  padding: 0 1rem;
+  background-color: var(--blue-dark);
+  color: var(--gray-100);
+  border: none;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.bgConfig {
+  margin-left: 1rem;
+  display: flex;
+  gap: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 0.1rem;
+}
+
+.bgConfig > button {
+  background-color: transparent;
+}
