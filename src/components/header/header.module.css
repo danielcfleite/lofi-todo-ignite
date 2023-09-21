@@ -8,6 +8,47 @@
   }
 }
 
+.chill {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.chillIconsWrapper {
+  margin-top: 2rem;
+  width: 20vw;
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  gap: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 0.1rem;
+}
+
+.chillIconsWrapper > .btnControls {
+  width: 2rem;
+  height: 2rem;
+}
+
+.chill form input {
+  display: none;
+}
+
 .header {
   background: transparent;
   display: flex;
@@ -41,10 +82,36 @@
   -webkit-text-fill-color: transparent;
 }
 
-.rocket path {
-  fill: transparent;
-  stroke: 10;
-  stroke: #ffffff;
+.chillBgConfig {
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 10vw;
+  z-index: 99;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.chillBgConfigButton {
+  background-color: transparent !important;
+}
+
+.createChill {
+  opacity: 0;
+}
+
+.chillLogo {
+  display: none;
 }
 
 .dot {

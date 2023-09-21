@@ -15,6 +15,7 @@ import { ChangeEvent, FormEvent, useRef } from "react";
 import { useState } from "react";
 import { songs } from "../../songs";
 import { CurrentSong } from "../currentSong/currentSong";
+import { ModalTalk } from "../modal/modal";
 
 interface Props {
   onAddTask: (taskTitle: string) => void;
@@ -29,6 +30,7 @@ export function Header({ onAddTask }: Props) {
   const [bgIndex, setBgIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [songIndex, setSongIndex] = useState(0);
+  const [chill, setChill] = useState(false);
   const songsToPlay = [song1, song2, song3];
 
   function handleSubmit(event: FormEvent) {
@@ -100,21 +102,27 @@ export function Header({ onAddTask }: Props) {
     setTitle(event.target.value);
   }
 
+  function onTalk() {
+    setChill((current) => !current);
+    console.log(chill);
+  }
+
   return (
     <>
-      <header className={style.header}>
+      <ModalTalk onTalk={onTalk} chill={chill} />
+      <header className={chill ? style.chill : style.header}>
         <audio src={songs[0].music} ref={song1}></audio>
         <audio src={songs[1].music} ref={song2}></audio>
         <audio src={songs[2].music} ref={song3}></audio>
         <div className={style.VhsOverlay}></div>
         <img src={bgs[bgIndex]} className={style.BG} />
         <div className={style.logoWrapper}>
-          <div className={style.logo}>
+          <div className={chill ? style.chillLogo : style.logo}>
             <span className={style.magic}>TO</span>
             <div className={style.dot}></div>
             <span>DO</span>
           </div>
-          <div className={style.iconsWrapper}>
+          <div className={chill ? style.chillIconsWrapper : style.iconsWrapper}>
             <IoPlaySkipBackCircleSharp
               className={style.btnControls}
               size={30}
@@ -147,14 +155,22 @@ export function Header({ onAddTask }: Props) {
             onChange={handleOnChange}
             value={title}
           />
-          <button>
+          <button className={chill ? style.createChill : ""}>
             Criar <img src={Plus} alt="" />
           </button>
-          <div className={style.bgConfig}>
-            <button type="button" onClick={backBG}>
+          <div className={chill ? style.chillBgConfig : style.bgConfig}>
+            <button
+              type="button"
+              className={chill ? style.chillBgConfigButton : ""}
+              onClick={backBG}
+            >
               <IoChevronBackOutline />
             </button>
-            <button type="button" onClick={nextBG}>
+            <button
+              type="button"
+              className={chill ? style.chillBgConfigButton : ""}
+              onClick={nextBG}
+            >
               <IoChevronForwardOutline />
             </button>
           </div>

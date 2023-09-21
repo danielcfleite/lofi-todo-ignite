@@ -1,0 +1,114 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.alien {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9px;
+  border: 3px solid var(--purple);
+}
+
+.alienMenu {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9px;
+}
+
+.menu:hover {
+  opacity: 1;
+}
+
+.menu {
+  z-index: 2;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0.5;
+  position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 2rem;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.menu p {
+  margin-left: 2rem;
+  animation: float 5s ease-in-out infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 15px;
+  color: black;
+  background-color: #ece5ce;
+  padding: 50px;
+  border-radius: 11px;
+  position: relative;
+  box-shadow: 20px 20px #83af9b;
+  font-family: "Baloo 2", cursive;
+  border: 1px solid #c8c8a9;
+}
+
+.alienBtn {
+  display: flex;
+  gap: 2rem;
+}
+
+.alienBtn > button {
+  border: none;
+  background-color: D;
+}
+
+.talk {
+  margin-left: 2rem;
+  animation: float 5s ease-in-out infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 15px;
+  color: black;
+  background-color: #ece5ce;
+  padding: 50px;
+  border-radius: 11px;
+  position: relative;
+  box-shadow: 20px 20px #83af9b;
+  font-family: "Baloo 2", cursive;
+  border: 1px solid #c8c8a9;
+}
+
+.talk:nth-child(odd) {
+  margin-left: 10rem;
+}
+
+.talk:nth-child(even) {
+  margin-right: 10rem;
+}
+
+.notExists {
+  display: none;
+}
