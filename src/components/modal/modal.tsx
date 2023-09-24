@@ -1,20 +1,30 @@
 import alien from "../../assets/alienhead.jpg";
 import style from "./modal.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   onTalk: () => void;
   chill: boolean;
 }
 
+const LOCAL_STORAGE_ALIEN_KEY = "todo:alienTalked";
+
 export function ModalTalk({ onTalk, chill }: Props) {
   const [line, setLine] = useState(1);
   const [linesMenu, setLinesMenu] = useState(false);
   const [exists, setExists] = useState(false);
+  const [visited, setVisited] = useState(false);
   function nextLine() {
     if (line < 3) setLine((current) => current + 1);
     else {
       setExists(false);
+    }
+  }
+
+  function ifVisited() {
+    const hasVisited = localStorage.getItem(LOCAL_STORAGE_ALIEN_KEY);
+    if (hasVisited) {
+      setVisited(true);
     }
   }
 
@@ -28,11 +38,17 @@ export function ModalTalk({ onTalk, chill }: Props) {
 
   function startTalk() {
     onTalk();
-    if (chill === false) {
+    if (chill === false && visited === false) {
       setLine(1);
       setExists(true);
+      setVisited(true);
+      localStorage.setItem(LOCAL_STORAGE_ALIEN_KEY, JSON.stringify(visited));
     }
   }
+
+  useEffect(() => {
+    ifVisited();
+  }, []);
 
   return (
     <>

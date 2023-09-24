@@ -1,8 +1,10 @@
 import "./styles/global.css";
 import { Header } from "./components/header";
 import { Tasks } from "./components/Tasks";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
+
+const LOCAL_STORAGE_KEY = "todo:savedTasks";
 
 export interface ITask {
   id: any;
@@ -15,11 +17,28 @@ function App() {
 
   function deleteTaskById(taskId: string) {
     const newTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(newTasks);
+    setTasksAndSave(newTasks);
   }
 
+  function setTasksAndSave(newTasks: ITask[]) {
+    setTasks(newTasks);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks));
+  }
+
+  function loadSavedTasks() {
+    const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+    if (saved) {
+      setTasks(JSON.parse(saved));
+    }
+  }
+
+  useEffect(() => {
+    loadSavedTasks();
+  }, []);
+
   function addTask(taskTitle: string) {
-    setTasks([
+    setTasksAndSave([
       ...tasks,
       {
         title: taskTitle,
@@ -39,7 +58,7 @@ function App() {
       }
       return task;
     });
-    setTasks(newTasks);
+    setTasksAndSave(newTasks);
   }
 
   return (
