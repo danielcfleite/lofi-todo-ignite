@@ -1,4 +1,6 @@
-![image](https://github.com/danielcfleite/lofi-todo-ignite/assets/107118708/3dbb6a37-bf24-413b-8ea7-a56f91a6a2a9)<h1 align="center"> Todo </h1>
+![image](https://github.com/danielcfleite/lofi-todo-ignite/assets/107118708/3dbb6a37-bf24-413b-8ea7-a56f91a6a2a9)
+
+<h1 align="center"> Todo </h1>
 
 <p align="center">
 Todo is an app developed as Rocketseat's first challenge in the React track. The ideia is to make a todo app that doesn't focus on productivity in the traditional sense, and instead creates a relaxing place. Future versions might contain a pomodoro and other tools for productivity, but making an all-in-one tool like that is already part of my plans and might be a future project alltogether.<br/>
@@ -6,7 +8,6 @@ Todo is an app developed as Rocketseat's first challenge in the React track. The
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  
 </p>
 
 <p align="center">
@@ -23,17 +24,18 @@ Todo is an app developed as Rocketseat's first challenge in the React track. The
 ## 💻 Projeto
 
 Please talk to the alien! 
-[img src="https://imgur.com/a/faf95xH"]
-- [Acesse o app através desse link, online](https://evans-costa.github.io/habits)
+![image] (https://imgur.com/a/faf95xH)
+- [You can acess the project here!]([(https://lofi-todo-ignite.vercel.app/))
 
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- HTML e CSS
-- JavaScript
-- Git e Github
-- Figma
+- HTML & CSS
+- Typescript
+- React
+- Vite
+
 
 
