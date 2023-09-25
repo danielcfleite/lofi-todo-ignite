@@ -23,7 +23,7 @@ Todo is an app developed as Rocketseat's first challenge in the React track. The
 Please talk to the alien! 
 
 
-- [You can acess the project here!]([(https://lofi-todo-ignite.vercel.app/))
+[You can acess the project here!](https://lofi-todo-ignite.vercel.app/)
 
 
 ## 🚀 Technologies
