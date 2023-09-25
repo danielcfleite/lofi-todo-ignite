@@ -14,7 +14,6 @@
   height: 100vh;
   top: 0;
   left: 0;
-  overflow: hidden;
   z-index: 1;
 }
 
@@ -38,6 +37,62 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   padding: 0.1rem;
+}
+
+.chillLanguageSelector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  z-index: 5;
+  left: 2rem;
+  top: 2rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 1rem;
+  transition: 0.5s;
+}
+
+.languageSelector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  z-index: 5;
+  left: 2rem;
+  top: 11rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 1rem;
+  transition: 0.5s;
+}
+
+.languageSelector:hover {
+  transform: scale(1.05);
 }
 
 .chillIconsWrapper > .btnControls {
@@ -240,7 +295,7 @@ a {
   color: var(--gray-300);
 }
 
-.taskForm button {
+.create {
   height: 100%;
   padding: 0 1rem;
   background-color: var(--blue-dark);
@@ -256,8 +311,10 @@ a {
 
 .bgConfig {
   margin-left: 1rem;
-  display: flex;
   gap: 1rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -268,9 +325,16 @@ a {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  padding: 0.1rem;
 }
 
 .bgConfig > button {
   background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.chillBgConfig > button {
+  background-color: transparent;
+  color: white;
+  border: none;
 }

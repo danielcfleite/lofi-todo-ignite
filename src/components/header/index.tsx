@@ -16,12 +16,15 @@ import { useState } from "react";
 import { songs } from "../../songs";
 import { CurrentSong } from "../currentSong/currentSong";
 import { ModalTalk } from "../modal/modal";
+import { LiaGlobeSolid } from "react-icons/lia";
 
 interface Props {
   onAddTask: (taskTitle: string) => void;
+  onSetLanguage: () => void;
+  isEnglish: boolean;
 }
 
-export function Header({ onAddTask }: Props) {
+export function Header({ onAddTask, onSetLanguage, isEnglish }: Props) {
   const song1 = useRef<HTMLAudioElement>(null);
   const song2 = useRef<HTMLAudioElement>(null);
   const song3 = useRef<HTMLAudioElement>(null);
@@ -109,7 +112,7 @@ export function Header({ onAddTask }: Props) {
 
   return (
     <>
-      <ModalTalk onTalk={onTalk} chill={chill} />
+      <ModalTalk onTalk={onTalk} chill={chill} isEnglish={isEnglish} />
       <header className={chill ? style.chill : style.header}>
         <audio src={songs[0].music} ref={song1}></audio>
         <audio src={songs[1].music} ref={song2}></audio>
@@ -149,13 +152,25 @@ export function Header({ onAddTask }: Props) {
           </div>
         </div>
         <form className={style.taskForm} onSubmit={handleSubmit}>
+          <button
+            type="button"
+            className={
+              chill ? style.chillLanguageSelector : style.languageSelector
+            }
+            onClick={onSetLanguage}
+          >
+            <LiaGlobeSolid size={30} />{" "}
+            <span>{isEnglish ? "English" : "PT - BR"}</span>
+          </button>
           <input
             type="text"
-            placeholder="Adicione uma nova tarefa"
+            placeholder={
+              isEnglish ? "Add a new task" : "Adicione uma nova tarefa"
+            }
             onChange={handleOnChange}
             value={title}
           />
-          <button className={chill ? style.createChill : ""}>
+          <button className={chill ? style.createChill : style.create}>
             Criar <img src={Plus} alt="" />
           </button>
           <div className={chill ? style.chillBgConfig : style.bgConfig}>
@@ -164,14 +179,14 @@ export function Header({ onAddTask }: Props) {
               className={chill ? style.chillBgConfigButton : ""}
               onClick={backBG}
             >
-              <IoChevronBackOutline />
+              <IoChevronBackOutline size={25} />
             </button>
             <button
               type="button"
               className={chill ? style.chillBgConfigButton : ""}
               onClick={nextBG}
             >
-              <IoChevronForwardOutline />
+              <IoChevronForwardOutline size={25} />
             </button>
           </div>
         </form>

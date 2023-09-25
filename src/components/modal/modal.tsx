@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 interface Props {
   onTalk: () => void;
   chill: boolean;
+  isEnglish: boolean;
 }
 
 const LOCAL_STORAGE_ALIEN_KEY = "todo:alienTalked";
 
-export function ModalTalk({ onTalk, chill }: Props) {
+export function ModalTalk({ onTalk, chill, isEnglish }: Props) {
   const [line, setLine] = useState(1);
   const [linesMenu, setLinesMenu] = useState(false);
   const [exists, setExists] = useState(false);
@@ -18,6 +19,18 @@ export function ModalTalk({ onTalk, chill }: Props) {
     if (line < 3) setLine((current) => current + 1);
     else {
       setExists(false);
+    }
+  }
+
+  function messageMenu(isEnglish: boolean, chill: boolean) {
+    if (isEnglish && chill) {
+      return "Ready to go back?";
+    } else if (isEnglish && chill === false) {
+      return "Wanna relax?";
+    } else if (isEnglish === false && chill) {
+      return "pronto para voltar?";
+    } else {
+      return "Ei, afim de relaxar?";
     }
   }
 
@@ -62,23 +75,29 @@ export function ModalTalk({ onTalk, chill }: Props) {
           <img src={alien} className={style.alien} />
         </button>
         {linesMenu ? (
-          <p className={style.MenuTalk}>
-            {chill ? "Pronto para voltar?" : "Ei, afim de relaxar?"}
-          </p>
+          <p className={style.MenuTalk}>{messageMenu(isEnglish, chill)}</p>
         ) : (
           ""
         )}
       </div>
       <div className={exists ? "" : style.notExists}>
         <div className={style.modal} onClick={nextLine}>
-          {line >= 1 && <p className={style.talk}>Oi</p>}
+          {line >= 1 && (
+            <p className={style.talk}>{isEnglish ? "Hi!" : "Oi"}</p>
+          )}
 
           {line >= 2 && (
             <p className={style.talk}>
-              Se você quiser apenas ouvir música e relaxar
+              {isEnglish
+                ? "If you just want to listen to music and relax"
+                : "Se você quiser apenas ouvir música e relaxar!"}
             </p>
           )}
-          {line >= 3 && <p className={style.talk}>Sinta-se em casa</p>}
+          {line >= 3 && (
+            <p className={style.talk}>
+              {isEnglish ? "You're at home" : "Sinta-se em casa"}
+            </p>
+          )}
           <div className={style.alienBtn}>
             <img src={alien} className={style.alien} />
           </div>

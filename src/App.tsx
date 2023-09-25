@@ -14,6 +14,11 @@ export interface ITask {
 
 function App() {
   const [tasks, setTasks] = useState<ITask[]>([]);
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  function setLanguage() {
+    setIsEnglish((current) => !current);
+  }
 
   function deleteTaskById(taskId: string) {
     const newTasks = tasks.filter((task) => task.id !== taskId);
@@ -63,11 +68,16 @@ function App() {
 
   return (
     <>
-      <Header onAddTask={addTask} />
+      <Header
+        onAddTask={addTask}
+        onSetLanguage={setLanguage}
+        isEnglish={isEnglish}
+      />
       <Tasks
         tasks={tasks}
         onDelete={deleteTaskById}
         onComplete={taskCompletedById}
+        isEnglish={isEnglish}
       />
     </>
   );
