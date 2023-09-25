@@ -16,15 +16,11 @@ Todo is an app developed as Rocketseat's first challenge in the React track. The
 
 <br>
 
-<p align="center">
-  <img alt="projeto Habits" src=".github/preview.jpg" width="100%">
-</p>
-
 
 ## 💻 Projeto
 
 Please talk to the alien! 
-![image] (https://imgur.com/a/faf95xH)
+![image](https://imgur.com/a/faf95xH)
 - [You can acess the project here!]([(https://lofi-todo-ignite.vercel.app/))
 
 
