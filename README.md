@@ -18,9 +18,11 @@ Todo is an app developed as Rocketseat's first challenge in the React track. The
 
 
 ## 💻 Projeto
+![image]([https://github.com/danielcfleite/lofi-todo-ignite/assets/107118708/3dbb6a37-bf24-413b-8ea7-a56f91a6a2a9](https://i.imgur.com/pmvCtu7.png))
 
 Please talk to the alien! 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/faf95xH" data-context="false" ><a href="//imgur.com/a/faf95xH"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+
 - [You can acess the project here!]([(https://lofi-todo-ignite.vercel.app/))
 
 
