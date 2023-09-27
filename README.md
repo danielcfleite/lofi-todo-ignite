@@ -28,7 +28,7 @@ Please talk to the alien!
 
 ## 🚀 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project uses the following technologies: 
 
 - HTML & CSS
 - Typescript
