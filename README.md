@@ -17,7 +17,7 @@ Todo is an app developed as Rocketseat's first challenge in the React track. The
 <br>
 
 
-## 💻 Projeto
+## 💻 Project
 ![image](https://i.imgur.com/pmvCtu7.png)
 
 Please talk to the alien! 
