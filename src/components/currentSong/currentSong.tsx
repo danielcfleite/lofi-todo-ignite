@@ -1,5 +1,4 @@
 import styles from "./currentSong.module.css";
-import { IoLogoYoutube } from "react-icons/io5";
 import { songs } from "../../songs";
 import { TbHeadphonesOff, TbHeadphones } from "react-icons/tb";
 import { useState } from "react";
@@ -31,9 +30,6 @@ export function CurrentSong({ isPlaying, songIndex }: Props) {
               <h1 className={styles.songTitle}>{songs[songIndex].title}</h1>
             </div>
             <img src={songs[songIndex].imgUrl} className={styles.channelImg} />
-            <a href={songs[songIndex].youtubeUrl} target="blank">
-              <IoLogoYoutube className={styles.ytLogo} />
-            </a>
           </header>
         </div>
       )}

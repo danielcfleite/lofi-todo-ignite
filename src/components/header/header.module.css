@@ -69,7 +69,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  position: fixed;
   z-index: 5;
   left: 2rem;
   top: 11rem;
